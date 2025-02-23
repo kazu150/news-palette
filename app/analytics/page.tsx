@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import TagPopularityChart from './TagPopularityChart';
 import TimeSeriesChart from './TimeSeriesChart';
