@@ -3,7 +3,11 @@
 import React, { useState } from 'react';
 
 const SettingsPage = () => {
-  const [rssUrls, setRssUrls] = useState<string[]>(['https://zenn.dev/feed', 'https://qiita.com/feed', 'https://b.hatena.ne.jp/hotentry/it.rss']);
+  const [rssUrls, setRssUrls] = useState<string[]>([
+    'https://zenn.dev/feed',
+    'https://qiita.com/feed',
+    'https://b.hatena.ne.jp/hotentry/it.rss',
+  ]);
   const [newRssUrl, setNewRssUrl] = useState('');
 
   const handleAddRssUrl = () => {
@@ -22,7 +26,9 @@ const SettingsPage = () => {
       <h1 className="text-2xl font-bold mb-4">設定ページ</h1>
 
       <section className="mb-6">
-        <h2 className="text-lg font-semibold mb-2">ニュース収集元 (RSSフィード)</h2>
+        <h2 className="text-lg font-semibold mb-2">
+          ニュース収集元 (RSSフィード)
+        </h2>
         <div className="flex gap-2 mb-4">
           <input
             type="text"
@@ -40,7 +46,10 @@ const SettingsPage = () => {
         </div>
         <ul className="space-y-2">
           {rssUrls.map((url) => (
-            <li key={url} className="flex items-center justify-between bg-gray-100 p-2 rounded">
+            <li
+              key={url}
+              className="flex items-center justify-between bg-gray-100 p-2 rounded"
+            >
               <span className="text-sm break-all">{url}</span>
               <button
                 onClick={() => handleRemoveRssUrl(url)}
@@ -52,7 +61,6 @@ const SettingsPage = () => {
           ))}
         </ul>
       </section>
-
     </div>
   );
 };

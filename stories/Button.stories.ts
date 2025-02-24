@@ -55,6 +55,6 @@ export const Small: Story = {
 export const Testdayo: Story = {
   args: {
     primary: false,
-    label: "Button"
-  }
+    label: 'Button',
+  },
 };

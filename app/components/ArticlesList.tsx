@@ -3,26 +3,21 @@
 import { useState, useEffect } from 'react';
 import { ArticleCard } from './ArticleCard';
 import { TagFilter } from './TagFilter';
-
-export type Article = {
-    id: number;
-    post_type: "Article";
-    title: string;
-    emoji: string;
-    path: string;
-  };
-
+// Article 型を Prisma から直接インポート
+import { Article } from '@prisma/client';
 
 type Props = {
   articles: Article[];
 };
 
 export const ArticlesList = ({ articles }: Props) => {
-  const [filteredArticles, setFilteredArticles] = useState<ReadonlyArray<Article>>([]);
+  const [filteredArticles, setFilteredArticles] = useState<
+    ReadonlyArray<Article>
+  >([]);
 
   useEffect(() => {
-    setFilteredArticles(articles)
-  }, [articles])
+    setFilteredArticles(articles);
+  }, [articles]);
 
   const handleFilterChange = (selectedTag: string) => {
     if (selectedTag === 'all') {

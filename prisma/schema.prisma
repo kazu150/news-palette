@@ -1,0 +1,41 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Article {
+  id          Int       @id @default(autoincrement())
+  title       String
+  summary     String
+  originalUrl String
+  source      String
+  author      String
+  publishedAt DateTime
+  createdAt   DateTime   @default(now())
+
+  tags        ArticleTag[]
+}
+
+model Tag {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  createdAt   DateTime  @default(now())
+
+  articles    ArticleTag[]
+}
+
+model ArticleTag {
+  article   Article @relation(fields: [articleId], references: [id])
+  articleId Int
+
+  tag       Tag @relation(fields: [tagId], references: [id])
+  tagId     Int
+
+  createdAt DateTime @default(now())
+
+  @@id([articleId, tagId]) // 複合主キー
+}

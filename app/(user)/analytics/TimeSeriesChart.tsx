@@ -26,12 +26,20 @@ const TimeSeriesChart = () => {
   return (
     <div className="w-full h-80 bg-white shadow-md rounded-lg p-4">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+        <LineChart
+          data={data}
+          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" tick={{ fontSize: 12 }} />
           <YAxis allowDecimals={false} />
           <Tooltip />
-          <Line type="monotone" dataKey="articles" stroke="#6366F1" strokeWidth={2} />
+          <Line
+            type="monotone"
+            dataKey="articles"
+            stroke="#6366F1"
+            strokeWidth={2}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -14,6 +14,7 @@ const meta: Meta<typeof ArticleCard> = {
         post_type: 'Article',
         title: 'React 18の新機能について', // 🟢 ここが undefined になっている可能性あり
         emoji: '⚛️',
+        
         path: '/articles/react18',
       },
     },

@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    container_name: news_aggregator_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: news_aggregator
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app_network
+volumes:
+  pgdata:
+networks:
+  app_network:
+    driver: bridge

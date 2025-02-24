@@ -24,9 +24,18 @@ const EngagementChart = () => {
   return (
     <div className="w-full h-80 bg-white shadow-md rounded-lg p-4">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+        <BarChart
+          data={data}
+          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="title" tick={{ fontSize: 12 }} interval={0} angle={-45} textAnchor="end" />
+          <XAxis
+            dataKey="title"
+            tick={{ fontSize: 12 }}
+            interval={0}
+            angle={-45}
+            textAnchor="end"
+          />
           <YAxis allowDecimals={false} />
           <Tooltip />
           <Bar dataKey="views" fill="#6366F1" name="閲覧数" />

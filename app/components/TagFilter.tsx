@@ -6,7 +6,15 @@ type TagFilterProps = {
   onFilterChange: (tag: string) => void;
 };
 
-const tags = ['all', 'React', 'Vue', 'JavaScript', 'TypeScript', 'Next.js', 'CSS'];
+const tags = [
+  'all',
+  'React',
+  'Vue',
+  'JavaScript',
+  'TypeScript',
+  'Next.js',
+  'CSS',
+];
 
 export const TagFilter: React.FC<TagFilterProps> = ({ onFilterChange }) => {
   return (
